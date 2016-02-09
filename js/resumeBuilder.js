@@ -6,7 +6,7 @@ var work = {
 		"employer": "Syngenta",
 		"location": "Landskrona",
 		"dates": "2013 -",
-		"description": "problemsolving, analysing results scientifically in R (statistic programming)"
+		"description": "problem solving, analyzing results scientifically in R (statistic programming)"
 		},
 		{
 		"title": "breeding project lead",
@@ -35,11 +35,20 @@ var work = {
 		"location": "Lund",
 		"dates": "2005 - 2007",
 		"description": "analyzing the benefit of a yeast species in bioethanol production using biochemical tools"
-		},
+		}
 	]
 }
 
-
+var projects = {
+	"projects" : [
+		{
+		"title": "261 Consulting webpage",
+		"dates": "jan 2016",
+		"description": "interactive and responisve webpage for the company 261 Consulting",
+		"images": "http://www.261consulting.com/"
+		}
+	]
+}
 
 var bio = {
 	"name": "Linda Hellborg",
@@ -53,11 +62,7 @@ var bio = {
 	"pictureURL": "images/LindaHead.jpg",
 	"welcomeMessage": "Welcome to my page, I am so glad YOU are here!",
 	"skills": ["bioinformatics", "breeding", "genetics", "molecular biology"]
-};
-
-
-
-
+}
 
 
 var education = {
@@ -67,7 +72,7 @@ var education = {
 		"location": "Uppsala, Sweden",
 		"degree": "PhD in genetics",
 		"dates": "1999 - 2004",
-		"major": ["evolutionary genetics" , "population genetics in mammals"]
+		"major": ["evolutionary genetics" , "population genetics in mammals"],
 		"url": "www.ebc.uu.se/"
 		},
 		{
@@ -75,7 +80,7 @@ var education = {
 		"location": "Lund and Uppsala, Sweden",
 		"degree": "introduction to scientific research",
 		"dates": "1998 - 1999",
-		"major": ["yoghurt fermentation", "water sanitation with microorganisms", "population genetics in lynx"]
+		"major": ["yoghurt fermentation", "water sanitation with microorganisms", "population genetics in lynx"],
 		"url": "www.lunduniversity.lu.se/"
 		},
 		{
@@ -83,7 +88,7 @@ var education = {
 		"location": "Lund, Sweden",
 		"degree": "Master",
 		"dates": "1993 -1998",
-		"major": ["molecular biology"]
+		"major": ["molecular biology"],
 		"url": "www.lunduniversity.lu.se/"
 		},
 		{
@@ -91,7 +96,7 @@ var education = {
 		"location": "Point Loma, San Diego, US",
 		"degree": "Freshman",
 		"dates": "1992-1993",
-		"major": ["track and field", "speech", "history of music", "psycology"]
+		"major": ["track and field", "speech", "history of music", "psycology"],
 		"url": "http://www.pointloma.edu/"
 		}
 	],
@@ -132,15 +137,64 @@ var education = {
 		"school": "codecadamy",
 		"dates": 2016,
 		"url": "https://www.codecademy.com/learn"
-		},
+		}
 	]
 }
 
 
-$("#header").append(work["position"]);
-$("#header").append(education.name)
+
+function inName() {
+	return function(ignored, name) {
+		name = name.trim().split(" ");
+		console.log(name);
+		name[1] = name[1].toUpperCase();
+		name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+		return name[0] + " " + name[1]		
+	}
+};
+
+$("#main").append(internationalizeButton)
 
 
-var awesomeThoughts = "I am Linda and I am AWESOME!";
-console.log(awesomeThoughts);
 
+var formattedName = HTMLheaderName.replace("%data%", "Linda Hellborg");
+$("#header").append(formattedName);
+
+var formattedRole = HTMLheaderRole.replace("%data%", "Developer");
+$("#header").append(formattedRole);
+
+
+
+//check and adding skills to the resume/
+if(bio["skills"].length > 0) {
+
+	$("#header").append(HTMLskillsStart);
+
+	bio.skills.forEach(function(skill) {
+		var formattedSkill = HTMLskills.replace("%data%", skill);
+		$("#skills").append(formattedSkill);
+	});
+};
+
+function displaywork() {
+	// add jobs in work section in resume//
+	for (job in work.jobs) {
+		//checks that jobs key has a property assigned to it//
+		if(work.jobs.hasOwnProperty(job)) {
+
+			$("#workExperience").append(HTMLworkStart);
+			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+			var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+			$(".work-entry:last").append(formattedEmployer + formattedTitle);
+			var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+			$(".work-entry:last").append(formattedLocation);
+			var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+			$(".work-entry:last").append(formattedDates);
+			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+			$(".work-entry:last").append(formattedDescription);
+
+		};
+	};
+};
+
+displaywork();

@@ -45,13 +45,13 @@ var projects = {
 		"title": "261 Consulting webpage",
 		"dates": "jan 2016",
 		"description": "interactive and responisve webpage for the company 261 Consulting",
-		"images": "http:/* www.261consulting.com/"
+		"images": ["images/261Cons1-xsmall.jpg", "images/261Cons2-xsmall.jpg", "images/261Cons3-xsmall.jpg"]
 		},
 		{
 		"title": "responsive webpage",
 		"dates": "jan 2016",
 		"description": "interactive and responisve webpage in the Udacity front end deveolper course",
-		"images": ""
+		"images": ["images/p1a-xsmall.jpg", "images/p1b-xsmall.jpg", "images/p1md.jpeg", "images/p1xs.jpeg"]
 		}
 	]
 }
@@ -213,12 +213,14 @@ projects.display = function() {
 			$("#projects").append(HTMLprojectStart);
 			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
 			$(".project-entry:last").append(formattedTitle);
-			var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].title);
+			var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 			$(".project-entry:last").append(formattedDates);
 			var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 			$(".project-entry:last").append(formattedDescription);
-			var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
-			$(".project-entry:last").append(formattedImage);
+			for (image in projects.projects[project].images) {
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+				$(".project-entry:last").append(formattedImage);
+			};
 		};
 	};
 };

@@ -48,7 +48,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #76E3EA;
+  color: #558184;
   line-height: 29px;
   padding: 10px;
   font-family: 'Permanent Marker',cursive,  sans-serif;
@@ -118,10 +118,11 @@ a {
 #skills-h3 {
   color: #f5ae23;
   display: none;
+  padding-top: 30px;
 }
 
 .orange {
-  background-color: #2B35C5;
+  background-color: #170BB7;
 }
 
 .orange-text {
@@ -228,7 +229,7 @@ span {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
-  background-color: #6F6F6F;
+  background-color: #000;
 }
 
 div .gm-style-iw {
@@ -236,6 +237,10 @@ div .gm-style-iw {
   background-color: #2B35C5;
   color: #76E3EA;
   border-radius: 5px;
+  text-align: center;
+  border: black;
+  border-style: solid;
+  border-width: thick;
 }
 
 @media only screen and (min-width: 750px) {

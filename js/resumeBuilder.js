@@ -51,7 +51,7 @@ var projects = {
 		"title": "responsive webpage",
 		"dates": "jan 2016",
 		"description": "interactive and responisve webpage in the Udacity front end deveolper course",
-		"images": ["images/p1a-xsmall.jpg", "images/p1b-xsmall.jpg", "images/p1md.jpeg", "images/p1xs.jpeg"]
+		"images": ["images/p1a-xsmall.jpg", "images/p1b-xsmall.jpg", "images/p1d-xsmall.jpg", "images/p1md-xsmall.jpg", "images/p1xs-xsmall.jpg"]
 		}
 	]
 }
@@ -167,6 +167,23 @@ function inName() {
 /* make a button to the end of the end of the document that internationalize the name */
 $("#main").append(internationalizeButton)
 
+var formattedMobile = HTMLmobile.replace("%data%", bio.contactInfo.mobile);
+$("#header").append(formattedMobile);
+
+var formattedEmail = HTMLemail.replace("%data%", bio.contactInfo.email);
+$("#header").append(formattedEmail);
+
+var formattedLocation = HTMLlocation.replace("%data%", bio.contactInfo.location);
+$("#header").append(formattedLocation);
+
+var formattedGithub = HTMLgithub.replace("%data%", bio.contactInfo.github);
+$("#header").append(formattedGithub);
+
+var formattedMyPicture = HTMLbioPic.replace("%data%", bio.pictureURL);
+$("#header").append(formattedMyPicture);
+
+var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(formattedWelcomeMessage);
 
 /* check and adding skills to the resume */
 if(bio["skills"].length > 0) {

@@ -63,7 +63,7 @@ var bio = {
 		"mobile": " +46 73494092",
 		"email": "linda.hellborg@gmail.com",
 		"location": " Landskrona, Sweden",
-		"github": "https:/* github.com/lhellborg"
+		"github": "https://github.com/lhellborg"
 		},
 	"pictureURL": "images/LindaHead.jpg",
 	"welcomeMessage": "Welcome to my page, I am so glad YOU are here!",
@@ -74,11 +74,19 @@ var bio = {
 var education = {
 	"schools": [
 		{
+		"name": "Statistics for biologist using R",
+		"location": "Lund, Sweden",
+		"degree": "PhD course",
+		"dates": "2014",
+		"major": ["statistic" , " R programming"],
+		"url": "http://www.lunduniversity.lu.se/"
+		},
+		{
 		"name": "Evolutionay Biology Center, Uppsala University",
 		"location": "Uppsala, Sweden",
 		"degree": "PhD in genetics",
 		"dates": "1999 - 2004",
-		"major": ["evolutionary genetics" , "population genetics in mammals"],
+		"major": ["evolutionary genetics" , " population genetics in mammals"],
 		"url": "http://www.ebc.uu.se/"
 		},
 		{
@@ -86,7 +94,7 @@ var education = {
 		"location": "Lund, Sweden",
 		"degree": "introduction to scientific research",
 		"dates": "1998 - 1999",
-		"major": ["yoghurt fermentation", "water sanitation with microorganisms", "population genetics in lynx"],
+		"major": ["yoghurt fermentation", " water sanitation with microorganisms", " population genetics in lynx"],
 		"url": "http://www.lunduniversity.lu.se/"
 		},
 		{
@@ -102,7 +110,7 @@ var education = {
 		"location": "Point Loma, San Diego, US",
 		"degree": "Freshman",
 		"dates": "1992-1993",
-		"major": ["track and field", "speech", "history of music", "psycology"],
+		"major": ["track and field"],
 		"url": "http://www.pointloma.edu/"
 		}
 	],

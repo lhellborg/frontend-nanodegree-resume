@@ -4,35 +4,35 @@ var work = {
 		{
 		"title": "scientific project lead",
 		"employer": "Syngenta",
-		"location": "Landskrona",
+		"location": "Landskrona, Sweden",
 		"dates": "2013 -",
 		"description": "problem solving, analyzing results scientifically in R (statistic programming)"
 		},
 		{
 		"title": "breeding project lead",
 		"employer": "Syngenta",
-		"location": "Landskrona",
+		"location": "Landskrona Sweden",
 		"dates": "2009 - 2013",
 		"description": "developing sugarbeet hybrids for the european market, using genetic data, physical inspection, analyzing market needs and statistical tools for field data"
 		},
 		{
 		"title": "post doc plant physiology",
 		"employer": "Lund University",
-		"location": "Lund",
+		"location": "Lund, Sweden",
 		"dates": "2009",
 		"description": "analyzing phosphor pathway in plants using molecular techniques"
 		},
 		{
 		"title": "post doc yeast evolution",
 		"employer": "Lund University",
-		"location": "Lund",
+		"location": "Lund Sweden",
 		"dates": "2007 - 2009",
 		"description": "analyzing the evolution of a fast evolving yeast strain with bioinformatic programming in RUBY"
 		},
 		{
 		"title": "post doc yeast fermentation",
 		"employer": "Lund University",
-		"location": "Lund",
+		"location": "Lund, Sweden",
 		"dates": "2005 - 2007",
 		"description": "analyzing the benefit of a yeast species in bioethanol production using biochemical tools"
 		}
@@ -59,7 +59,7 @@ var projects = {
 var bio = {
 	"name": "Linda Hellborg",
 	"role": "Web Developer",
-	"contactInfo": {
+	"contacts": {
 		"mobile": " +46 73494092",
 		"email": "linda.hellborg@gmail.com",
 		"location": " Landskrona, Sweden",
@@ -83,7 +83,7 @@ var education = {
 		},
 		{
 		"name": "University of Lund/Uppsala",
-		"location": "Lund and Uppsala, Sweden",
+		"location": "Lund, Sweden",
 		"degree": "introduction to scientific research",
 		"dates": "1998 - 1999",
 		"major": ["yoghurt fermentation", "water sanitation with microorganisms", "population genetics in lynx"],
@@ -154,29 +154,16 @@ $("#header").append(formattedName);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").append(formattedRole);
 
-/* change the last name to upper case and teh first name to lower case except fist letter! */
-function inName() {
-	var name = $("#name").text();
-	name = name.trim().split(" ");
-	console.log(name);
-	name[1] = name[1].toUpperCase();
-	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-	return name[0] + " " + name[1]		
-};
-
-/* make a button to the end of the end of the document that internationalize the name */
-$("#main").append(internationalizeButton)
-
-var formattedMobile = HTMLmobile.replace("%data%", bio.contactInfo.mobile);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#header").append(formattedMobile);
 
-var formattedEmail = HTMLemail.replace("%data%", bio.contactInfo.email);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 $("#header").append(formattedEmail);
 
-var formattedLocation = HTMLlocation.replace("%data%", bio.contactInfo.location);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#header").append(formattedLocation);
 
-var formattedGithub = HTMLgithub.replace("%data%", bio.contactInfo.github);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 $("#header").append(formattedGithub);
 
 var formattedMyPicture = HTMLbioPic.replace("%data%", bio.pictureURL);
@@ -196,8 +183,21 @@ if(bio["skills"].length > 0) {
 	});
 };
 
+/* change the last name to upper case and teh first name to lower case except fist letter! */
+function inName() {
+	var name = $("#name").text();
+	name = name.trim().split(" ");
+	console.log(name);
+	name[1] = name[1].toUpperCase();
+	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+	return name[0] + " " + name[1]		
+};
+
+/* make a button to the end of the end of the document that internationalize the name */
+$("#main").append(internationalizeButton)
+
 /* a function to display the work object and all of it's properties */
-function displayWork() {
+work.displayWork = function() {
 	/*  add jobs in work section in resume */
 	for (job in work.jobs) {
 		/* checks that jobs key has a property assigned to it */
@@ -219,7 +219,7 @@ function displayWork() {
 };
 
 /* calling displaywork */
-displayWork();
+work.displayWork();
 
 /* making a function to the project ogject by encapsulations to display all of the projects */
 projects.display = function() {
@@ -244,3 +244,5 @@ projects.display = function() {
 
 projects.display();
 
+/* adding a map to the resume */
+$("#mapDiv").append(googleMap);

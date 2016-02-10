@@ -79,7 +79,7 @@ var education = {
 		"degree": "PhD in genetics",
 		"dates": "1999 - 2004",
 		"major": ["evolutionary genetics" , "population genetics in mammals"],
-		"url": "www.ebc.uu.se/"
+		"url": "http://www.ebc.uu.se/"
 		},
 		{
 		"name": "University of Lund/Uppsala",
@@ -87,7 +87,7 @@ var education = {
 		"degree": "introduction to scientific research",
 		"dates": "1998 - 1999",
 		"major": ["yoghurt fermentation", "water sanitation with microorganisms", "population genetics in lynx"],
-		"url": "www.lunduniversity.lu.se/"
+		"url": "http://www.lunduniversity.lu.se/"
 		},
 		{
 		"name": "University of Lund",
@@ -95,7 +95,7 @@ var education = {
 		"degree": "Master",
 		"dates": "1993 -1998",
 		"major": ["molecular biology"],
-		"url": "www.lunduniversity.lu.se/"
+		"url": "http://www.lunduniversity.lu.se/"
 		},
 		{
 		"name": "PLNU",
@@ -103,7 +103,7 @@ var education = {
 		"degree": "Freshman",
 		"dates": "1992-1993",
 		"major": ["track and field", "speech", "history of music", "psycology"],
-		"url": "http:/* www.pointloma.edu/"
+		"url": "http://www.pointloma.edu/"
 		}
 	],
 
@@ -112,76 +112,79 @@ var education = {
 		"title": "JavaScript Syntax",
 		"school": "Udacity",
 		"dates": 2016,
-		"url": "http:/* www.udacity.com/course/ud804"
+		"url": "http://www.udacity.com/course/ud804"
 		},
 		{
 		"title": "HTML & CSS",
 		"school": "codecadamy",
 		"dates": 2016,
-		"url": "https:/* www.codecademy.com/learn"
+		"url": "https://www.codecademy.com/learn"
 		},
 		{
 		"title": "JavaScript",
 		"school": "codecadamy",
 		"dates": 2016,
-		"url": "https:/* www.codecademy.com/learn"
+		"url": "https://www.codecademy.com/learn"
 		},
 		{
 		"title": "jQuery",
 		"school": "codecadamy",
 		"dates": 2016,
-		"url": "https:/* www.codecademy.com/learn"
+		"url": "https://www.codecademy.com/learn"
 		},
 		{
 		"title": "Ruby",
 		"school": "codecadamy",
 		"dates": 2016,
-		"url": "https:/* www.codecademy.com/learn"
+		"url": "https://www.codecademy.com/learn"
 		},
 		{
 		"title": "SQL: Analyzing Business Metrics",
 		"school": "codecadamy",
 		"dates": 2016,
-		"url": "https:/* www.codecademy.com/learn"
+		"url": "https://www.codecademy.com/learn"
 		}
 	]
 }
 
+bio.display = function() {
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	$("#header").append(formattedName);
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").append(formattedName);
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").append(formattedRole);
 
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").append(formattedRole);
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#header").append(formattedMobile);
 
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#header").append(formattedMobile);
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#header").append(formattedEmail);
 
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#header").append(formattedEmail);
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#header").append(formattedLocation);
 
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#header").append(formattedLocation);
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#header").append(formattedGithub);
 
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#header").append(formattedGithub);
+	var formattedMyPicture = HTMLbioPic.replace("%data%", bio.pictureURL);
+	$("#header").append(formattedMyPicture);
 
-var formattedMyPicture = HTMLbioPic.replace("%data%", bio.pictureURL);
-$("#header").append(formattedMyPicture);
+	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedWelcomeMessage);
 
-var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#header").append(formattedWelcomeMessage);
+	/* check and adding skills to the resume */
+	if(bio["skills"].length > 0) {
 
-/* check and adding skills to the resume */
-if(bio["skills"].length > 0) {
+		$("#header").append(HTMLskillsStart);
 
-	$("#header").append(HTMLskillsStart);
-
-	bio.skills.forEach(function(skill) {
-		var formattedSkill = HTMLskills.replace("%data%", skill);
-		$("#skills").append(formattedSkill);
-	});
+		bio.skills.forEach(function(skill) {
+			var formattedSkill = HTMLskills.replace("%data%", skill);
+			$("#skills").append(formattedSkill);
+		});
+	};
 };
+
+bio.display();
 
 /* change the last name to upper case and teh first name to lower case except fist letter! */
 function inName() {
@@ -243,6 +246,44 @@ projects.display = function() {
 };
 
 projects.display();
+
+education.display = function() {
+	
+	for(school in education.schools) {
+		
+		if (education.schools.hasOwnProperty(school)) {
+			$("#education").append(HTMLschoolStart);
+			var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+			$(".education-entry:last").append(formattedName);
+			var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+			$(".education-entry:last").append(formattedDegree);
+			var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+			$(".education-entry:last").append(formattedDates);
+			var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+			$(".education-entry:last").append(formattedLocation);
+			var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+			$(".education-entry:last").append(formattedMajor);			
+		};
+	};
+
+	$(".education-entry:last").append(HTMLonlineClasses);
+
+	for (onLineCourse in education.onlineCourses) {
+
+		if (education.onlineCourses.hasOwnProperty(onLineCourse)) {
+			var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onLineCourse].title);
+			$(".education-entry:last").append(formattedTitle);
+			var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onLineCourse].school);
+			$(".education-entry:last").append(formattedSchool);
+			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onLineCourse].dates);
+			$(".education-entry:last").append(formattedDates);
+			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onLineCourse].url);
+			$(".education-entry:last").append(formattedURL);
+		};
+	};
+};
+
+education.display();
 
 /* adding a map to the resume */
 $("#mapDiv").append(googleMap);

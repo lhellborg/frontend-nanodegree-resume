@@ -45,19 +45,25 @@ var projects = {
 		"title": "261 Consulting webpage",
 		"dates": "jan 2016",
 		"description": "interactive and responisve webpage for the company 261 Consulting",
-		"images": "http://www.261consulting.com/"
+		"images": "http:/* www.261consulting.com/"
+		},
+		{
+		"title": "responsive webpage",
+		"dates": "jan 2016",
+		"description": "interactive and responisve webpage in the Udacity front end deveolper course",
+		"images": ""
 		}
 	]
 }
 
 var bio = {
 	"name": "Linda Hellborg",
-	"role": "Web Deveolper",
+	"role": "Web Developer",
 	"contactInfo": {
 		"mobile": " +46 73494092",
 		"email": "linda.hellborg@gmail.com",
 		"location": " Landskrona, Sweden",
-		"github": "https://github.com/lhellborg"
+		"github": "https:/* github.com/lhellborg"
 		},
 	"pictureURL": "images/LindaHead.jpg",
 	"welcomeMessage": "Welcome to my page, I am so glad YOU are here!",
@@ -97,7 +103,7 @@ var education = {
 		"degree": "Freshman",
 		"dates": "1992-1993",
 		"major": ["track and field", "speech", "history of music", "psycology"],
-		"url": "http://www.pointloma.edu/"
+		"url": "http:/* www.pointloma.edu/"
 		}
 	],
 
@@ -106,66 +112,63 @@ var education = {
 		"title": "JavaScript Syntax",
 		"school": "Udacity",
 		"dates": 2016,
-		"url": "http://www.udacity.com/course/ud804"
+		"url": "http:/* www.udacity.com/course/ud804"
 		},
 		{
 		"title": "HTML & CSS",
 		"school": "codecadamy",
 		"dates": 2016,
-		"url": "https://www.codecademy.com/learn"
+		"url": "https:/* www.codecademy.com/learn"
 		},
 		{
 		"title": "JavaScript",
 		"school": "codecadamy",
 		"dates": 2016,
-		"url": "https://www.codecademy.com/learn"
+		"url": "https:/* www.codecademy.com/learn"
 		},
 		{
 		"title": "jQuery",
 		"school": "codecadamy",
 		"dates": 2016,
-		"url": "https://www.codecademy.com/learn"
+		"url": "https:/* www.codecademy.com/learn"
 		},
 		{
 		"title": "Ruby",
 		"school": "codecadamy",
 		"dates": 2016,
-		"url": "https://www.codecademy.com/learn"
+		"url": "https:/* www.codecademy.com/learn"
 		},
 		{
 		"title": "SQL: Analyzing Business Metrics",
 		"school": "codecadamy",
 		"dates": 2016,
-		"url": "https://www.codecademy.com/learn"
+		"url": "https:/* www.codecademy.com/learn"
 		}
 	]
 }
 
 
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+$("#header").append(formattedName);
 
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").append(formattedRole);
+
+/* change the last name to upper case and teh first name to lower case except fist letter! */
 function inName() {
-	return function(ignored, name) {
-		name = name.trim().split(" ");
-		console.log(name);
-		name[1] = name[1].toUpperCase();
-		name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-		return name[0] + " " + name[1]		
-	}
+	var name = $("#name").text();
+	name = name.trim().split(" ");
+	console.log(name);
+	name[1] = name[1].toUpperCase();
+	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+	return name[0] + " " + name[1]		
 };
 
+/* make a button to the end of the end of the document that internationalize the name */
 $("#main").append(internationalizeButton)
 
 
-
-var formattedName = HTMLheaderName.replace("%data%", "Linda Hellborg");
-$("#header").append(formattedName);
-
-var formattedRole = HTMLheaderRole.replace("%data%", "Developer");
-$("#header").append(formattedRole);
-
-
-
-//check and adding skills to the resume/
+/* check and adding skills to the resume */
 if(bio["skills"].length > 0) {
 
 	$("#header").append(HTMLskillsStart);
@@ -176,10 +179,11 @@ if(bio["skills"].length > 0) {
 	});
 };
 
-function displaywork() {
-	// add jobs in work section in resume//
+/* a function to display the work object and all of it's properties */
+function displayWork() {
+	/*  add jobs in work section in resume */
 	for (job in work.jobs) {
-		//checks that jobs key has a property assigned to it//
+		/* checks that jobs key has a property assigned to it */
 		if(work.jobs.hasOwnProperty(job)) {
 
 			$("#workExperience").append(HTMLworkStart);
@@ -197,4 +201,27 @@ function displaywork() {
 	};
 };
 
-displaywork();
+/* calling displaywork */
+displayWork();
+
+/* making a function to the project ogject by encapsulations to display all of the projects */
+projects.display = function() {
+	/* add projects into the resume */
+	for (project in projects.projects) {
+		/* check if projects key has own value */
+		if (projects.projects.hasOwnProperty(project)) {
+			$("#projects").append(HTMLprojectStart);
+			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+			$(".project-entry:last").append(formattedTitle);
+			var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].title);
+			$(".project-entry:last").append(formattedDates);
+			var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+			$(".project-entry:last").append(formattedDescription);
+			var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
+			$(".project-entry:last").append(formattedImage);
+		};
+	};
+};
+
+projects.display();
+

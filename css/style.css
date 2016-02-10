@@ -18,7 +18,7 @@ h6 {
 body {
   max-width: 1000px;
   margin: auto;
-  background-color: black;
+  background-color: #B5B0B0;
   border-color: #557692;
   border-style: double;
   border-left-width: 10px;
@@ -185,7 +185,7 @@ span {
 }
 
 #education {
-  background-color: #2F2F2F;
+  background-color: #484646;
 }
 
 #lets-connect {
@@ -228,7 +228,7 @@ span {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
-  background-color: #484848;
+  background-color: #6F6F6F;
 }
 
 @media only screen and (min-width: 750px) {

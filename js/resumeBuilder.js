@@ -311,3 +311,7 @@ education.display();
 
 /* adding a map to the resume */
 $("#mapDiv").append(googleMap);
+
+
+/* make the lists user interactive */
+$('.ui.accordion').accordion();

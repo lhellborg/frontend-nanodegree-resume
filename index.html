@@ -29,10 +29,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <!-- fonts added -->
   <link href='https://fonts.googleapis.com/css?family=Rock+Salt|Permanent+Marker|Merriweather:400,300italic,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
-  <!-- Load the page D3 library -->
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-
-  <script type="text/javascript" src="js/d3style.js"></script>
+ 
 
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
@@ -49,8 +46,19 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   -->
   <script src="js/jQuery.js"></script>
 
+  <!-- Load the page styles for semantic UI. -->
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+
+  <!-- Load the js script for semantic UI. -->
+  <script src="js/semantic.min.js"></script>
+
+
+
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
+
+  <!-- Load the personalized js script for semantic UI. 
+  <script type="js/semanticBuilder.js"></script>-->
 
   <!--
   Uncomment the <script> tag below when you're ready to add an interactive
@@ -73,23 +81,27 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       <ul id="topContacts" class="flex-box"></ul>
     </div>
     <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
-    </div>
-    <div id="projects">
-      <h2>Projects</h2>
-    </div>
-    <div id="education" class="gray">
-      <h2>Education</h2>
-    </div>
-    <div id="mapDiv">
-      <h2>Where I've Lived and Worked</h2>
-    </div>
-    <div id="lets-connect" class="dark-gray">
-      <h2 class="orange center-text">Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
-      </ul>
-    </div>
+
+    <div class ="ui styled fluid accordion">
+        <div id="workExperience" class="gray">
+          <h2>Work Experience</h2>
+        </div>
+        <div id="projects">
+          <h2>Projects</h2>
+        </div>
+        <div id="education" class="gray">
+          <h2>Education</h2>
+        </div>
+        <div id="mapDiv">
+          <h2>Where I've Lived and Worked</h2>
+        </div>
+        <div id="lets-connect" class="dark-gray">
+          <h2 class="orange center-text">Let's Connect</h2>
+            <ul id="footerContacts" class="flex-box">
+          </ul>
+        </div>
+     </div> 
+     
   </div>
 
   <!--

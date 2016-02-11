@@ -18,7 +18,10 @@ h6 {
 body {
   max-width: 1000px;
   margin: auto;
-  background-color: #B5B0B0;
+  background-color: #B5B0B0; 
+}
+
+#main {
   border-color: #557692;
   border-style: double;
   border-left-width: 10px;
@@ -80,9 +83,9 @@ h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #999!important;
   line-height: 16px;
-  float: left;
+  /*float: left;*/
 }
 
 .location-text {

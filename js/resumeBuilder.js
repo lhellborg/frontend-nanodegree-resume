@@ -194,6 +194,22 @@ bio.display = function() {
 
 bio.display();
 
+bio.displayFooter = function() {
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#footerContacts").append(formattedMobile);
+
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#footerContacts").append(formattedEmail);
+
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#footerContacts").append(formattedLocation);
+
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#footerContacts").append(formattedGithub);
+}
+
+bio.displayFooter();
+
 /* change the last name to upper case and teh first name to lower case except fist letter! */
 function inName() {
 	var name = $("#name").text();

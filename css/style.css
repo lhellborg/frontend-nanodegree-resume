@@ -37,10 +37,14 @@ body {
 .education-entry,
 .work-entry,
 .project-entry, 
-.onLine-entry,
-.onLine-content {
+.onLine-entry {
   padding: 0 5%;
   color: #999;
+}
+
+/*hide the content of onLine courses*/
+.onLine-entry {
+  display: none;
 }
 
 h1 {

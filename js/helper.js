@@ -32,7 +32,7 @@ var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></
 var HTMLworkStart = '<div class="work-entry ui accordion"></div>';
 var HTMLworkEmployer = '<a  href="#">%data%';
 var HTMLworkTitle = ' - %data% </a>';
-var HTMLworkDates = '<div class="date-text title">%data%</div>';
+var HTMLworkDates = '<div class="work-date-text title">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<div class="content"><p><br>%data%</p></div>';
 
@@ -47,9 +47,10 @@ var HTMLschoolName = '<a href="#">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
+var HTMLschoolMajor = '<em id="major-text"><br>Major: %data%</em>';
 
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
+var HTMLonlineClasses = '<div class="onLine"><h3>Online Classes</h3></div>';
+var HTMLonlineClassesStart = '<div class="onLine-entry "></div>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';

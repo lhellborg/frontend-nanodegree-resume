@@ -84,7 +84,7 @@ var education = {
 		{
 		"name": "Evolutionay Biology Center, Uppsala University",
 		"location": "Uppsala, Sweden",
-		"degree": "PhD in genetics",
+		"degree": "PhD, genetics",
 		"dates": "1999 - 2004",
 		"major": ["evolutionary genetics" , " population genetics in mammals"],
 		"url": "http://www.ebc.uu.se/"
@@ -100,7 +100,7 @@ var education = {
 		{
 		"name": "University of Lund",
 		"location": "Lund, Sweden",
-		"degree": "Master",
+		"degree": "MSc, molecular biology",
 		"dates": "1993 -1998",
 		"major": ["molecular biology"],
 		"url": "http://www.lunduniversity.lu.se/"
@@ -158,25 +158,18 @@ var education = {
 bio.display = function() {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	$("#header").append(formattedName);
-
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 	$("#header").append(formattedRole);
-
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	$("#header").append(formattedMobile);
-
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 	$("#header").append(formattedEmail);
-
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 	$("#header").append(formattedLocation);
-
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 	$("#header").append(formattedGithub);
-
 	var formattedMyPicture = HTMLbioPic.replace("%data%", bio.pictureURL);
 	$("#header").append(formattedMyPicture);
-
 	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 	$("#header").append(formattedWelcomeMessage);
 
@@ -197,13 +190,10 @@ bio.display();
 bio.displayFooter = function() {
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	$("#footerContacts").append(formattedMobile);
-
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 	$("#footerContacts").append(formattedEmail);
-
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 	$("#footerContacts").append(formattedLocation);
-
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 	$("#footerContacts").append(formattedGithub);
 }
@@ -290,22 +280,25 @@ education.display = function() {
 		};
 	};
 
-	$(".education-entry:last").append(HTMLonlineClasses);
-
+	$(HTMLonlineClasses).insertAfter(".education-entry:last");
+	
 	for (onLineCourse in education.onlineCourses) {
 
 		if (education.onlineCourses.hasOwnProperty(onLineCourse)) {
+			$(".onLine").append(HTMLonlineClassesStart);
 			var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onLineCourse].title);
-			$(".education-entry:last").append(formattedTitle);
+			$(".onLine-entry:last").append(formattedTitle);
 			var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onLineCourse].school);
-			$(".education-entry:last").append(formattedSchool);
+			$(".onLine-entry:last").append(formattedSchool);
 			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onLineCourse].dates);
-			$(".education-entry:last").append(formattedDates);
+			$(".onLine-entry:last").append(formattedDates);
 			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onLineCourse].url);
-			$(".education-entry:last").append(formattedURL);
+			$(".onLine-entry:last").append(formattedURL);
 		};
 	};
 };
+
+
 
 education.display();
 

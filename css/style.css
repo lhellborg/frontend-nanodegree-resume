@@ -36,8 +36,11 @@ body {
 
 .education-entry,
 .work-entry,
-.project-entry {
+.project-entry, 
+.onLine-entry,
+.onLine-content {
   padding: 0 5%;
+  color: #999;
 }
 
 h1 {
@@ -60,8 +63,9 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #568D92;
   line-height: 22px;
+  text-decoration: underline;
 }
 
 h4 {
@@ -79,13 +83,19 @@ h5 {
 
 }
 
+.work-date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999!important;
+  line-height: 16px;
+}
 
 .date-text {
   font-style: italic;
   font-size: 14px;
   color: #999!important;
   line-height: 16px;
-  /*float: left;*/
+  float: left;
 }
 
 .location-text {
@@ -95,6 +105,10 @@ h5 {
   line-height: 16px;
   float: right;
 
+}
+
+#major-text {
+  color: black;
 }
 
 p {

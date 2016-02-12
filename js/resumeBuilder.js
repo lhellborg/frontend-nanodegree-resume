@@ -6,35 +6,40 @@ var work = {
 		"employer": "Syngenta",
 		"location": "Landskrona, Sweden",
 		"dates": "2013 -",
-		"description": "problem solving, analyzing results scientifically in R (statistic programming)"
+		"description": "Responsible for investigating and improve processes linked to sugarbeet breeding. Analyzing results statistically with R programming. Inform and test new ways of working. The processes to improve included all links in sugarbeet breeding from new ways to analyse result, more efficient breeding, improve first crossing starts, new ways to analyse seed quality and more accurate and efficient promoting system. ",
+		"url": "http://www3.syngenta.com/country/in/en/Production_Innovation/Seeds/Pages/home.aspx"
 		},
 		{
 		"title": "breeding project lead",
 		"employer": "Syngenta",
 		"location": "Landskrona Sweden",
 		"dates": "2009 - 2013",
-		"description": "developing sugarbeet hybrids for the european market, using genetic data, physical inspection, analyzing market needs and statistical tools for field data"
+		"description": "Develop commercial hybrids for north west European market. The job involved customer relations, analyzing huge dataset for yield, genetic understanding of different lines and their interaction, diseases in field, farmer practice, travelling, but mostly planning and following up on various projects.",
+		"url": "http://www3.syngenta.com/country/in/en/Production_Innovation/Seeds/Pages/home.aspx"
 		},
 		{
 		"title": "post doc plant physiology",
 		"employer": "Lund University",
 		"location": "Lund, Sweden",
 		"dates": "2009",
-		"description": "analyzing phosphor pathway in plants using molecular techniques"
+		"description": "Investigate the biological pathways in starch production and aging through statistical analyses of knockout plants and molecular methods.",
+		"url": "http://www.lunduniversity.lu.se/"
 		},
 		{
 		"title": "post doc yeast evolution",
 		"employer": "Lund University",
 		"location": "Lund Sweden",
 		"dates": "2007 - 2009",
-		"description": "analyzing the evolution of a fast evolving yeast strain with bioinformatic programming in RUBY"
+		"description": "Characterizing and investigation of non conventionell yeast for bioethanol production through molecular, fermentation and bioinformatic technology. ",
+		"url": "http://www.lunduniversity.lu.se/"
 		},
 		{
 		"title": "post doc yeast fermentation",
 		"employer": "Lund University",
 		"location": "Lund, Sweden",
 		"dates": "2005 - 2007",
-		"description": "analyzing the benefit of a yeast species in bioethanol production using biochemical tools"
+		"description": "Analyzing the benefit of a yeast species in bioethanol production using biochemical tools.",
+		"url": "http://www.lunduniversity.lu.se/"
 		}
 	]
 }
@@ -45,13 +50,15 @@ var projects = {
 		"title": "261 Consulting webpage",
 		"dates": "jan 2016",
 		"description": "interactive and responisve webpage for the company 261 Consulting",
-		"images": ["images/261Cons1-xsmall.jpg", "images/261Cons2-xsmall.jpg", "images/261Cons3-xsmall.jpg"]
+		"images": ["images/261Cons1-xsmall.jpg", "images/261Cons2-xsmall.jpg", "images/261Cons3-xsmall.jpg"],
+		"url": "http://www.261consulting.com/"
 		},
 		{
 		"title": "responsive webpage",
 		"dates": "jan 2016",
-		"description": "interactive and responisve webpage in the Udacity front end deveolper course",
-		"images": ["images/p1a-xsmall.jpg", "images/p1b-xsmall.jpg", "images/p1d-xsmall.jpg", "images/p1md-xsmall.jpg", "images/p1xs-xsmall.jpg"]
+		"description": "interactive and responsive webpage in the Udacity front end deveolper course",
+		"images": ["images/p1a-xsmall.jpg", "images/p1b-xsmall.jpg", "images/p1d-xsmall.jpg", "images/p1md-xsmall.jpg", "images/p1xs-xsmall.jpg"],
+		"url": "#"
 		}
 	]
 }
@@ -74,7 +81,7 @@ var bio = {
 var education = {
 	"schools": [
 		{
-		"name": "Statistics for biologist using R",
+		"name": "Statistics for biologist using R, Lund University",
 		"location": "Lund, Sweden",
 		"degree": "PhD course",
 		"dates": "2014",
@@ -90,9 +97,9 @@ var education = {
 		"url": "http://www.ebc.uu.se/"
 		},
 		{
-		"name": "University of Lund/Uppsala",
+		"name": "Biomedical Research School, Lund University",
 		"location": "Lund, Sweden",
-		"degree": "introduction to scientific research",
+		"degree": "Scientific research",
 		"dates": "1998 - 1999",
 		"major": ["yoghurt fermentation", " water sanitation with microorganisms", " population genetics in lynx"],
 		"url": "http://www.lunduniversity.lu.se/"
@@ -222,6 +229,7 @@ work.displayWork = function() {
 
 			$("#workExperience").append(HTMLworkStart);
 			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+			var formattedEmployer = formattedEmployer.replace("#", work.jobs[job].url);
 			var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 			$(".work-entry:last").append(formattedEmployer + formattedTitle);
 			var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
@@ -246,6 +254,7 @@ projects.display = function() {
 		if (projects.projects.hasOwnProperty(project)) {
 			$("#projects").append(HTMLprojectStart);
 			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+			var formattedTitle = formattedTitle.replace("#", projects.projects[project].url);
 			$(".project-entry:last").append(formattedTitle);
 			var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 			$(".project-entry:last").append(formattedDates);
@@ -268,6 +277,7 @@ education.display = function() {
 		if (education.schools.hasOwnProperty(school)) {
 			$("#education").append(HTMLschoolStart);
 			var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+			var formattedName = formattedName.replace("#", education.schools[school].url);
 			$(".education-entry:last").append(formattedName);
 			var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 			$(".education-entry:last").append(formattedDegree);
@@ -287,13 +297,14 @@ education.display = function() {
 		if (education.onlineCourses.hasOwnProperty(onLineCourse)) {
 			$(".onLine").append(HTMLonlineClassesStart);
 			var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onLineCourse].title);
+			var formattedTitle = formattedTitle.replace("#", education.onlineCourses[onLineCourse].url);
 			$(".onLine-entry:last").append(formattedTitle);
 			var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onLineCourse].school);
 			$(".onLine-entry:last").append(formattedSchool);
 			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onLineCourse].dates);
 			$(".onLine-entry:last").append(formattedDates);
-			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onLineCourse].url);
-			$(".onLine-entry:last").append(formattedURL);
+/*			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onLineCourse].url);
+			$(".onLine-entry:last").append(formattedURL); */
 		};
 	};
 };
@@ -309,26 +320,43 @@ $("#mapDiv").append(googleMap);
 /* make the lists user interactive */
 $('.ui.accordion').accordion();
 
-/* show the content of on line entries */
+/* show the content of onLine entries */
 $("h3").click(function() {
 	$("div.onLine-entry").toggle().animate({height: 100}, 2000);
 })
 
+/* makes the images go away when mouse voer them*/
 $("img").mouseover(function() {
 	$(this).animate({
 		opacity: 0.25,
 		height: "toggle"
-	}, 1000);
+	}, 2000);
 });
 
+/* makes the text date-text in work section becomes larger when mouse hover over them */
 $(".work-date-text.title").mouseover(function() {
 	$(this).animate({
 		fontSize: 20,
 	}, 200);
 });
 
+/* makes the text date-text in work section becomes smaller when mouse leave them */
 $(".work-date-text.title").mouseleave(function() {
 	$(this).animate({
 		fontSize: 10,
+	}, 200);
+});
+
+/* the two next code sections makes the text in each education entry becomes larger and smaller and also changes the opacity when mouse hover over them */
+$(".education-entry").mouseover(function() {
+	$(this).animate({
+		fontSize: 20,
+		opacity: 1
+	}, 200);
+});
+$(".education-entry").mouseover(function() {
+	$(this).animate({
+		fontSize: 15,
+		opacity: 0.6
 	}, 200);
 });

@@ -30,28 +30,28 @@ var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry ui accordion"></div>';
-var HTMLworkEmployer = '<a  href="#">%data%';
+var HTMLworkEmployer = '<a target="blank" href="#">%data%';
 var HTMLworkTitle = ' - %data% </a>';
 var HTMLworkDates = '<div class="work-date-text title">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<div class="content"><p><br>%data%</p></div>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<a target="blank" href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img id="projectImages" src="%data%" alt="project images">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
+var HTMLschoolName = '<a target="blank" href="#">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em id="major-text"><br>Major: %data%</em>';
+var HTMLschoolMajor = '<em id="major-text" class="major"><br>Major: %data%</em>';
 
 var HTMLonlineClasses = '<div class="onLine"><h3>Online Classes</h3></div>';
 var HTMLonlineClassesStart = '<div class="onLine-entry "></div>';
-var HTMLonlineTitle = '<a href="#">%data%';
+var HTMLonlineTitle = '<a target="blank" href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';

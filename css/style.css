@@ -42,9 +42,15 @@ body {
   color: #999;
 }
 
+.onLine {
+  background-color: #3C3B3B;
+}
+
 /*hide the content of onLine courses*/
 .onLine-entry {
   display: none;
+  border-bottom: #5C6363;
+  border-bottom-style: ridge;
 }
 
 h1 {
@@ -70,6 +76,8 @@ h3 {
   color: #568D92;
   line-height: 22px;
   text-decoration: underline;
+  cursor: pointer;
+  margin-top: 20px!important;
 }
 
 h4 {
@@ -140,6 +148,8 @@ a {
   color: #f5ae23;
   display: none;
   padding-top: 30px;
+  cursor: none;
+  text-decoration: none;
 }
 
 .orange {

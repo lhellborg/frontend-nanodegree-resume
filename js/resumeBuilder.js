@@ -308,3 +308,27 @@ $("#mapDiv").append(googleMap);
 
 /* make the lists user interactive */
 $('.ui.accordion').accordion();
+
+/* show the content of on line entries */
+$("h3").click(function() {
+	$("div.onLine-entry").toggle().animate({height: 100}, 2000);
+})
+
+$("img").mouseover(function() {
+	$(this).animate({
+		opacity: 0.25,
+		height: "toggle"
+	}, 1000);
+});
+
+$(".work-date-text.title").mouseover(function() {
+	$(this).animate({
+		fontSize: 20,
+	}, 200);
+});
+
+$(".work-date-text.title").mouseleave(function() {
+	$(this).animate({
+		fontSize: 10,
+	}, 200);
+});

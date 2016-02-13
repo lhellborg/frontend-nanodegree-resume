@@ -193,7 +193,7 @@ bio.display = function ()
 
 bio.display();
 
-/* change the last name to upper case and teh first name to lower case except fist letter! */
+/* change the last name to upper case and teh first name to lower case except fist letter! 
 function inName()
 {
 	var name = $("#name").text();
@@ -204,8 +204,8 @@ function inName()
 	return name[0] + " " + name[1];
 }
 
-/* make a button to the end of the end of the document that internationalize the name */
-$("#main").append(internationalizeButton);
+make a button to the end of the end of the document that internationalize the name 
+$("#main").append(internationalizeButton); */
 
 /* a function to display the work object and all of it's properties */
 work.displayWork = function ()
@@ -345,7 +345,7 @@ $("#onLine").click(function ()
 {
 	$("div.onLine-entry").toggle().animate(
 	{
-		height: 100
+		height: 70
 	}, 2000);
 });
 

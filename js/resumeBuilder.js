@@ -71,7 +71,7 @@ var bio = {
 		"github": "https://github.com/lhellborg"
 	},
 	"biopic": "images/LindaHead.jpg",
-	"welcomeMessage": "Welcome to my page, I am so glad YOU are here!",
+	"welcomeMessage": "Welcome to my page, I hope you enjoy it!",
 	"skills": ["bioinformatics", "breeding", "genetics", "molecular biology"]
 };
 
@@ -314,45 +314,14 @@ $("#mapDiv").append(googleMap);
 /* make the lists user interactive */
 $('.ui.accordion').accordion();
 
-/* show the content of work entries */
-$("#workExpText").click(function ()
-{
-	$("div.work-entry").toggle();
-});
 
+/* change the h2 text and background when mouse is hover over*/
 $("h2").mouseover(function() {
 	$(this).toggleClass("activeText");
 });
 
 $("h2").mouseleave(function() {
 	$(this).toggleClass("activeText");
-});
-
-/* show the content of work entries */
-$("#projectText").click(function ()
-{
-	$("div.project-entry").toggle();
-});
-
-/* show the content of work entries */
-$("#educationtext").click(function ()
-{
-	$("div.education-entry").toggleClass("activeEntry");
-});
-
-/* show the content of onLine entries */
-$("#onLine").click(function ()
-{
-	$("div.onLine-entry").toggle().animate(
-	{
-		height: 70
-	}, 2000);
-});
-
-/* show the content of work entries */
-$("#mapText").click(function ()
-{
-	$("#map").toggle();
 });
 
 /* makes the images opacity to 1 and change the size */
@@ -380,7 +349,7 @@ $(".work-date-text.title").mouseover(function ()
 {
 	$(this).animate(
 	{
-		fontSize: 20,
+		fontSize: 18,
 	}, 200);
 });
 
@@ -389,7 +358,7 @@ $(".work-date-text.title").mouseleave(function ()
 {
 	$(this).animate(
 	{
-		fontSize: 10,
+		fontSize: 15,
 	}, 200);
 });
 
@@ -411,3 +380,23 @@ $(".education-entry").mouseleave(function ()
 		opacity: 0.5
 	}, 200);
 });
+
+/* makes the different sections open one at a time by closing the open one when another section is clicked */
+$(".article").click(function()
+{
+	if ($(this).hasClass('current')) 
+	{
+		$(this).removeClass("current");
+		$(this).siblings(".showText").hide("blind");
+	}
+	else 
+	{
+		$(".article").removeClass("current");
+		$(".showText").hide("blind");
+		$(this).addClass("current");
+		$(this).siblings(".showText").show("blind");
+	}	
+});
+
+
+

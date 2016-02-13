@@ -29,35 +29,35 @@ var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
-var HTMLworkStart = '<div class="work-entry ui accordion"></div>';
+var HTMLworkStart = '<div class="work-entry ui accordion showText"></div>';
 var HTMLworkEmployer = '<a target="blank" href="#">%data%';
 var HTMLworkTitle = ' - %data% </a>';
 var HTMLworkDates = '<div class="work-date-text title">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<div class="content"><p><br>%data%</p></div>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
+var HTMLprojectStart = '<div class="project-entry showText"></div>';
 var HTMLprojectTitle = '<a target="blank" href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img id="projectImages" class="projectImages" src="%data%" alt="project images">';
 
-var HTMLschoolStart = '<div class="education-entry"></div>';
+var HTMLschoolStart = '<div class="education-entry showText"></div>';
 var HTMLschoolName = '<a target="blank" href="#">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em id="major-text" class="major"><br>Major: %data%</em>';
 
-var HTMLonlineClasses = '<div class="onLine"><h2 id="onLine">Online Classes</h2></div>';
-var HTMLonlineClassesStart = '<div class="onLine-entry "></div>';
+var HTMLonlineClasses = '<div class="onLine"><h2 id="onLine" class="article">Online Classes</h2></div>';
+var HTMLonlineClassesStart = '<div class="onLine-entry showText"></div>';
 var HTMLonlineTitle = '<a target="blank" href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"></div>';
+var googleMap = '<div id="map" class="showText"></div>';
 
 
 /*

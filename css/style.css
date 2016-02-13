@@ -41,12 +41,10 @@ body {
   padding: 0 5%;
   color: #999;
   display: none;
-}
-
-.activeEntry {
-  display: inherit;
-  background-color: #5F1A1A;
-  opacity: 0.5;
+  border-bottom: #904D4D;
+  border-bottom-style: groove;
+  border-width: thin;
+  padding-bottom: 10px;
 }
 
 .activeText {
@@ -57,15 +55,6 @@ body {
 
 .onLine {
   background-color: #762e3c; 
-}
-
-/* add a line between the entries */
-.onLine-entry, 
-.project-entry,
-.work-entry {
-  border-bottom: #904D4D;
-  border-bottom-style: groove;
-  border-width: thin;
 }
 
 h1 {

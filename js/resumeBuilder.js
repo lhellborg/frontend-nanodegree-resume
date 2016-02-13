@@ -317,27 +317,27 @@ $('.ui.accordion').accordion();
 /* show the content of work entries */
 $("#workExpText").click(function ()
 {
-	$("div.work-entry").toggle()
+	$("div.work-entry").toggle();
 });
 
 $("h2").mouseover(function() {
 	$(this).toggleClass("activeText");
-})
+});
 
 $("h2").mouseleave(function() {
 	$(this).toggleClass("activeText");
-})
+});
 
 /* show the content of work entries */
 $("#projectText").click(function ()
 {
-	$("div.project-entry").toggle()
+	$("div.project-entry").toggle();
 });
 
 /* show the content of work entries */
 $("#educationtext").click(function ()
 {
-	$("div.education-entry").toggleClass("active")
+	$("div.education-entry").toggleClass("activeEntry");
 });
 
 /* show the content of onLine entries */

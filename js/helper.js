@@ -40,7 +40,7 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a target="blank" href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img id="projectImages" src="%data%" alt="project images">';
+var HTMLprojectImage = '<img id="projectImages" class="projectImages" src="%data%" alt="project images">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a target="blank" href="#">%data%';
@@ -49,7 +49,7 @@ var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em id="major-text" class="major"><br>Major: %data%</em>';
 
-var HTMLonlineClasses = '<div class="onLine"><h3>Online Classes</h3></div>';
+var HTMLonlineClasses = '<div class="onLine"><h2 id="onLine">Online Classes</h2></div>';
 var HTMLonlineClassesStart = '<div class="onLine-entry "></div>';
 var HTMLonlineTitle = '<a target="blank" href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';

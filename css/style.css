@@ -101,8 +101,21 @@ h5 {
   padding:10px 5%;
 }
 
+#role {
+  font-size: 12px;
+  font-style: sans-serif;
+  color: black;
+}
+
 hr {
   border-color: #1B1715;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+#topContacts {
+  font-size: 12px;
+  padding-bottom: 20px;
 }
 
 .work-date-text {
@@ -196,6 +209,8 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .center-content {

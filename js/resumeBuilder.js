@@ -156,12 +156,48 @@ var education = {
 	}]
 };
 
+var achievements = {
+	"achievement": [
+	{
+		"title": "qualifying Swedish chamionship in obedience for dogs",
+		"data": "2015, 2013, 2012"
+	},
+	{
+		"title": "qualifying Swedish chamionship in agility for dogs",
+		"data": "2009"
+	},
+	{
+		"title": "competing in swedish nationalteam track and field",
+		"date": 1992
+	}]
+};
+
+var interests = [
+		"juijutsu instructor ",
+		"dog sports instructor ",
+		"physical training ",
+	];
+
+interests.display = function ()
+{
+
+	interests.forEach(function (interest)
+	{
+		$("#interests").append(HTMLinterestStart);
+		var formattedTitle = HTMLinterestTitle.replace("%data%", interest);
+		$(".interest-entry:last").append(formattedTitle);
+	});
+};
+
+interests.display();
+
+
 bio.display = function ()
 {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	$("#header").prepend(formattedName);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-	$("#header").append(formattedRole);
+	$("#name").append(formattedRole);
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	$("#topContacts").append(formattedMobile);
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);

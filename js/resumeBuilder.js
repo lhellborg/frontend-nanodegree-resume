@@ -159,17 +159,17 @@ var education = {
 bio.display = function ()
 {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
-	$("#header").append(formattedName);
+	$("#header").prepend(formattedName);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 	$("#header").append(formattedRole);
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-	$("#header").append(formattedMobile);
+	$("#topContacts").append(formattedMobile);
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-	$("#header").append(formattedEmail);
+	$("#topContacts").append(formattedEmail);
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-	$("#header").append(formattedLocation);
+	$("#topContacts").append(formattedLocation);
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-	$("#header").append(formattedGithub);
+	$("#topContacts").append(formattedGithub);
 	var formattedMyPicture = HTMLbioPic.replace("%data%", bio.biopic);
 	$("#header").append(formattedMyPicture);
 	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);

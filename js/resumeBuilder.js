@@ -159,33 +159,65 @@ var education = {
 var achievements = {
 	"achievement": [
 	{
-		"title": "qualifying Swedish chamionship in obedience for dogs",
-		"data": "2015, 2013, 2012"
+		"title": "Competing in the Swedish championship, obedience for dogs",
+		"date": "2015, 2013, 2012"
 	},
 	{
-		"title": "qualifying Swedish chamionship in agility for dogs",
-		"data": "2009"
+		"title": "Competing in the Swedish championship, agility for dogs",
+		"date": "2009"
 	},
 	{
-		"title": "competing in swedish nationalteam track and field",
+		"title": "Competing in the swedish nationalteam, track and field",
 		"date": 1992
 	}]
 };
 
-var interests = [
-		"juijutsu instructor ",
-		"dog sports instructor ",
-		"physical training ",
-	];
+achievements.display = function ()
+{
+
+	achievements.achievement.forEach(function (thing)
+	{
+		$("#achievements").append(HTMLachievementStart);
+		var formattedTitle = HTMLachievementTitle.replace("%data%", thing.title);
+		$(".achievement-entry:last").append(formattedTitle);
+		var formattedClub = HTMLachievementDate.replace("%data%", thing.date);
+		$(".achievement-entry:last").append(formattedClub);
+	});
+};
+
+achievements.display();
+
+var interests = {
+	"hobbies": [
+		{
+			"title": "Juijutsu training and instructor",
+			"club": "JuiJutsu Kai, Landskrona",
+			"url": "http://www.landskronajujutsukai.se/"
+		},
+		{
+			"title": "Dog sports training and instructor",
+			"club": "Landskrona Brukshundsklubb",
+			"url": "http://www.labk.se/"
+		},
+		{
+			"title": "Physical training ",
+			"club": "Friskis och Svettis, Landskrona",
+			"url": "http://www.jympa.nu/?org=F3421EAD-4859-4A6A-A45F-5FB7087CDF2C"
+		}]
+};	
 
 interests.display = function ()
 {
 
-	interests.forEach(function (interest)
+	interests.hobbies.forEach(function (hobby)
 	{
 		$("#interests").append(HTMLinterestStart);
-		var formattedTitle = HTMLinterestTitle.replace("%data%", interest);
+		var formattedTitle = HTMLinterestTitle.replace("%data%", hobby.title);
+		formattedTitle = formattedTitle.replace("#", hobby.url);
 		$(".interest-entry:last").append(formattedTitle);
+		var formattedClub = HTMLinterestClub.replace("%data%", hobby.club);
+		formattedClub = formattedClub.replace("#", hobby.url);
+		$(".interest-entry:last").append(formattedClub);
 	});
 };
 

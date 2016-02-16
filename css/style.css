@@ -34,6 +34,8 @@ body {
   overflow: auto;
 }
 
+.achievement-entry,
+.interest-entry,  
 .education-entry,
 .work-entry,
 .project-entry, 
@@ -55,6 +57,10 @@ body {
 
 .onLine {
   background-color: #762e3c; 
+}
+
+.achievement-entry {
+  padding-bottom: 30px;
 }
 
 h1 {
@@ -92,11 +98,12 @@ h4 {
   font-size: 14px;
   color: #C16E22;
   line-height: 17px;
+  padding-left: 0px;
+  padding-top: 10px;
 }
 
 h2,
 h3,
-h4,
 h5 {
   padding:10px 5%;
 }

@@ -57,8 +57,12 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 var HTMLinterestStart = '<div class="interest-entry showText"></div>';
-var HTMLinterestTitle = '<a target="blank" href="#">%data%>';
+var HTMLinterestTitle = '<h4>%data% </h4>';
+var HTMLinterestClub = ' <a target="blank" href="#">%data%</a>';
 
+var HTMLachievementStart = '<div class="achievement-entry showText"></div>';
+var HTMLachievementTitle = '<h4>%data% </h4>';
+var HTMLachievementDate = '<div class="location-text">%data%</div>';
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map" class="showText"></div>';
 

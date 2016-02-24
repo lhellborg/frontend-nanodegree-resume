@@ -34,6 +34,8 @@ body {
   overflow: auto;
 }
 
+.achievement-entry,
+.interest-entry,  
 .education-entry,
 .work-entry,
 .project-entry, 
@@ -55,6 +57,10 @@ body {
 
 .onLine {
   background-color: #762e3c; 
+}
+
+.achievement-entry {
+  padding-bottom: 30px;
 }
 
 h1 {
@@ -92,17 +98,31 @@ h4 {
   font-size: 14px;
   color: #C16E22;
   line-height: 17px;
+  padding-left: 0px;
+  padding-top: 10px;
 }
 
 h2,
 h3,
-h4,
 h5 {
   padding:10px 5%;
 }
 
+#role {
+  font-size: 12px;
+  font-style: sans-serif;
+  color: black;
+}
+
 hr {
   border-color: #1B1715;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+#topContacts {
+  font-size: 12px;
+  padding-bottom: 20px;
 }
 
 .work-date-text {
@@ -196,6 +216,8 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .center-content {

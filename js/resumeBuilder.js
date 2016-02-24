@@ -156,20 +156,88 @@ var education = {
 	}]
 };
 
+var achievements = {
+	"achievement": [
+	{
+		"title": "Competing in the Swedish championship, obedience for dogs",
+		"date": "2015, 2013, 2012"
+	},
+	{
+		"title": "Competing in the Swedish championship, agility for dogs",
+		"date": "2009"
+	},
+	{
+		"title": "Competing in the swedish nationalteam, track and field",
+		"date": 1992
+	}]
+};
+
+achievements.display = function ()
+{
+
+	achievements.achievement.forEach(function (thing)
+	{
+		$("#achievements").append(HTMLachievementStart);
+		var formattedTitle = HTMLachievementTitle.replace("%data%", thing.title);
+		$(".achievement-entry:last").append(formattedTitle);
+		var formattedClub = HTMLachievementDate.replace("%data%", thing.date);
+		$(".achievement-entry:last").append(formattedClub);
+	});
+};
+
+achievements.display();
+
+var interests = {
+	"hobbies": [
+		{
+			"title": "Juijutsu training and instructor",
+			"club": "JuiJutsu Kai, Landskrona",
+			"url": "http://www.landskronajujutsukai.se/"
+		},
+		{
+			"title": "Dog sports training and instructor",
+			"club": "Landskrona Brukshundsklubb",
+			"url": "http://www.labk.se/"
+		},
+		{
+			"title": "Physical training ",
+			"club": "Friskis och Svettis, Landskrona",
+			"url": "http://www.jympa.nu/?org=F3421EAD-4859-4A6A-A45F-5FB7087CDF2C"
+		}]
+};	
+
+interests.display = function ()
+{
+
+	interests.hobbies.forEach(function (hobby)
+	{
+		$("#interests").append(HTMLinterestStart);
+		var formattedTitle = HTMLinterestTitle.replace("%data%", hobby.title);
+		formattedTitle = formattedTitle.replace("#", hobby.url);
+		$(".interest-entry:last").append(formattedTitle);
+		var formattedClub = HTMLinterestClub.replace("%data%", hobby.club);
+		formattedClub = formattedClub.replace("#", hobby.url);
+		$(".interest-entry:last").append(formattedClub);
+	});
+};
+
+interests.display();
+
+
 bio.display = function ()
 {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
-	$("#header").append(formattedName);
+	$("#header").prepend(formattedName);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-	$("#header").append(formattedRole);
+	$("#name").append(formattedRole);
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-	$("#header").append(formattedMobile);
+	$("#topContacts").append(formattedMobile);
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-	$("#header").append(formattedEmail);
+	$("#topContacts").append(formattedEmail);
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-	$("#header").append(formattedLocation);
+	$("#topContacts").append(formattedLocation);
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-	$("#header").append(formattedGithub);
+	$("#topContacts").append(formattedGithub);
 	var formattedMyPicture = HTMLbioPic.replace("%data%", bio.biopic);
 	$("#header").append(formattedMyPicture);
 	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
